@@ -1,5 +1,5 @@
 /* =========================================================
-   Utkarsh Verma — Site Stylesheet
+   Utkarsh Verma â€” Site Stylesheet
    Type system: Outfit (display) / Inter (body) / JetBrains Mono (system voice)
    ========================================================= */
 
@@ -12,9 +12,9 @@
   --border:        #E3E9F2;
   --border-strong: #CBD5E4;
 
-  --ink:           #101826;
-  --ink-soft:      #4A566B;
-  --ink-faint:     #8592A6;
+  --ink:           #05080F;
+  --ink-soft:      #2A3445;
+  --ink-faint:     #5A6880;
 
   --primary:       #2954E8;
   --primary-dark:  #1B3AAE;
@@ -128,8 +128,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
 /* Reveal-on-scroll */
 .reveal{
-  opacity: 0;
-  transform: translateY(22px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity .7s var(--ease), transform .7s var(--ease);
 }
 .reveal.is-visible{
@@ -138,7 +138,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 
 /* =========================================================
-   Background texture — faint blueprint grid, signature motif
+   Background texture â€” faint blueprint grid, signature motif
    ========================================================= */
 .grid-texture{
   position: fixed;
