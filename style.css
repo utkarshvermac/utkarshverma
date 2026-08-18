@@ -1,5 +1,5 @@
 /* =========================================================
-   Utkarsh Verma â€” Site Stylesheet
+   Utkarsh Verma — Site Stylesheet
    Type system: Outfit (display) / Inter (body) / JetBrains Mono (system voice)
    ========================================================= */
 
@@ -12,9 +12,9 @@
   --border:        #E3E9F2;
   --border-strong: #CBD5E4;
 
-  --ink:           #05080F;
-  --ink-soft:      #2A3445;
-  --ink-faint:     #5A6880;
+  --ink:           #101826;
+  --ink-soft:      #4A566B;
+  --ink-faint:     #8592A6;
 
   --primary:       #2954E8;
   --primary-dark:  #1B3AAE;
@@ -98,14 +98,16 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 13px;
+  text-transform: uppercase;
   color: var(--primary);
   background: var(--primary-soft);
-  padding: 6px 14px 6px 12px;
+  padding: 7px 16px 7px 13px;
   border-radius: 100px;
   margin-bottom: 20px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
 }
 .eyebrow .dot{
   width: 6px; height: 6px; border-radius: 50%;
@@ -128,8 +130,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 
 /* Reveal-on-scroll */
 .reveal{
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(22px);
   transition: opacity .7s var(--ease), transform .7s var(--ease);
 }
 .reveal.is-visible{
@@ -138,7 +140,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 
 /* =========================================================
-   Background texture â€” faint blueprint grid, signature motif
+   Background texture — faint blueprint grid, signature motif
    ========================================================= */
 .grid-texture{
   position: fixed;
@@ -178,53 +180,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .brand{
   display:flex;
   align-items:center;
-  gap: 12px;
-}
-.brand-badge{
-  width: 38px; height: 38px;
-  border-radius: 10px;
-  display:flex; align-items:center; justify-content:center;
-  background: linear-gradient(155deg, var(--primary) 0%, var(--cyan) 100%);
-  color:#fff;
-  font-family:'Outfit', sans-serif;
-  font-weight:700;
-  font-size: 15px;
-  letter-spacing: 0.02em;
-  box-shadow: 0 6px 16px -4px rgba(41,84,232,0.45);
-  flex-shrink: 0;
 }
 .brand-word{
   font-family:'Outfit', sans-serif;
-  font-weight: 600;
-  font-size: 16.5px;
-  letter-spacing: 0.03em;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
   color: var(--ink);
   white-space: nowrap;
-}
-.brand-word span{ color: var(--primary); }
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap: 4px;
-}
-.nav-links a{
-  padding: 9px 16px;
-  border-radius: 100px;
-  font-size: 14.5px;
-  font-weight: 500;
-  color: var(--ink-soft);
-  transition: color .2s var(--ease), background .2s var(--ease);
-}
-.nav-links a:hover{
-  color: var(--primary);
-  background: var(--primary-soft);
-}
-
-.nav-cta{
-  display:flex;
-  align-items:center;
-  gap: 14px;
 }
 .btn{
   display:inline-flex;
@@ -262,12 +225,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .btn-sm{ padding: 9px 18px; font-size: 13.5px; }
 
 .nav-toggle{
-  display:none;
-  width: 40px; height: 40px;
+  display:flex;
+  width: 42px; height: 42px;
   align-items:center; justify-content:center;
   border-radius: 10px;
   border: 1px solid var(--border);
   background: var(--surface);
+  transition: border-color .2s var(--ease), background .2s var(--ease);
+  flex-shrink: 0;
+}
+.nav-toggle:hover{
+  border-color: var(--primary);
+  background: var(--primary-soft);
 }
 .nav-toggle span{
   position:relative;
@@ -374,9 +343,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .hero-meta-item .label{
   font-size: 12.5px;
+  font-weight: 500;
   color: var(--ink-faint);
   margin-top: 3px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* --- Terminal signature element --- */
@@ -512,9 +484,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .info-row .info-label{
   font-size: 12px;
+  font-weight: 500;
   color: var(--ink-faint);
-  font-family:'JetBrains Mono', monospace;
-  margin-bottom: 3px;
+  font-family:'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
 }
 .info-row .info-value{
   font-size: 15px;
@@ -570,8 +545,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .skill-card .skill-sub{
   font-size: 12.5px;
+  font-weight: 500;
   color: var(--ink-faint);
-  font-family:'JetBrains Mono', monospace;
+  font-family:'Inter', sans-serif;
   margin-bottom: 18px;
   display:block;
 }
@@ -654,8 +630,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   display:inline-flex;
   align-items:center;
   gap: 8px;
-  font-family:'JetBrains Mono', monospace;
+  font-family:'Inter', sans-serif;
+  font-weight: 700;
   font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: var(--primary);
   margin-bottom: 14px;
 }
@@ -686,7 +665,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
    ========================================================= */
 .social-grid{
   display:grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 .social-card{
@@ -726,9 +705,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   margin-bottom: 3px;
 }
 .social-card .s-handle{
-  font-size: 12px;
+  font-size: 12.5px;
+  font-weight: 500;
   color: var(--ink-faint);
-  font-family:'JetBrains Mono', monospace;
+  font-family:'Inter', sans-serif;
 }
 .social-card:hover .s-handle{ color: var(--brand); }
 
@@ -817,35 +797,80 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   .about-grid{ grid-template-columns: 1fr; gap: 40px; }
   .skills-grid{ grid-template-columns: repeat(2, 1fr); }
   .project-card{ grid-template-columns: 1fr; }
-  .social-grid{ grid-template-columns: repeat(3, 1fr); }
-  .section{ padding: 96px 0; }
+  .social-grid{ grid-template-columns: repeat(2, 1fr); }
+  .section{ padding: 88px 0; }
 }
 
 @media (max-width: 760px){
-  .nav-links, .nav-cta .btn-ghost{ display:none; }
-  .nav-toggle{ display:flex; }
   .wrap{ padding: 0 20px; }
-  .hero{ padding: 140px 0 72px; }
-  .hero-meta{ gap: 20px; flex-wrap: wrap; }
-  .skills-grid{ grid-template-columns: 1fr; }
-  .social-grid{ grid-template-columns: repeat(2, 1fr); }
-  .project-content{ padding: 36px 28px; }
-  .cta-band{ padding: 40px 28px; flex-direction:column; align-items:flex-start; }
-  .section{ padding: 76px 0; }
+  .hero{ padding: 120px 0 64px; }
+  .hero-text h1{ font-size: clamp(32px, 9vw, 44px); }
+  .hero-lede{ font-size: 16px; }
+  .hero-actions{ gap: 12px; }
+  .hero-actions .btn{ flex: 1 1 auto; justify-content:center; }
+  .hero-meta{ gap: 18px 24px; flex-wrap: wrap; margin-top: 40px; padding-top: 24px; }
+  .hero-visual{ margin-top: 8px; }
+  .terminal-body{ min-height: 240px; font-size: 12.5px; padding: 22px 18px 26px; }
+  .section-head h2{ font-size: clamp(24px, 6vw, 32px); }
+  .section-head p{ font-size: 15.5px; }
+  .about-grid{ gap: 32px; }
+  .info-card{ padding: 22px; }
+  .skills-grid{ grid-template-columns: 1fr; gap: 16px; }
+  .skill-card{ padding: 24px 20px; }
+  .social-grid{ grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .social-card{ padding: 22px 14px; }
+  .project-visual{ padding: 28px 24px; }
+  .project-content{ padding: 32px 24px; }
+  .project-content h3{ font-size: 22px; }
+  .project-actions{ flex-direction: column; }
+  .project-actions .btn{ width: 100%; }
+  .cta-band{ padding: 32px 24px; flex-direction:column; align-items:flex-start; }
+  .cta-band .btn-ghost{ width: 100%; justify-content:center; }
+  .section{ padding: 64px 0; }
+  .footer-inner{ flex-direction: column; align-items:flex-start; gap: 14px; }
+  .footer-links{ gap: 18px; flex-wrap: wrap; }
 }
 
-/* Mobile nav drawer */
-.nav-links.open{
-  display:flex;
+@media (max-width: 420px){
+  .wrap{ padding: 0 16px; }
+  .brand-word{ font-size: 15.5px; letter-spacing: 0.03em; }
+  .hero-meta{ gap: 16px 20px; }
+  .hero-meta-item .num{ font-size: 19px; }
+  .social-grid{ grid-template-columns: 1fr 1fr; gap: 12px; }
+  .chip{ font-size: 12px; padding: 5px 10px; }
+}
+
+/* Nav drawer (hamburger menu, all breakpoints) */
+.nav-drawer{
+  display:none;
+  flex-direction: column;
   position: absolute;
   top: calc(100% + 10px);
   left: 20px; right: 20px;
+  max-width: 420px;
+  margin-left: auto;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  flex-direction: column;
-  padding: 12px;
+  padding: 10px;
   gap: 2px;
 }
-.nav-links.open a{ padding: 12px 16px; }
+.nav-drawer.open{ display:flex; }
+.nav-drawer a{
+  padding: 13px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: color .2s var(--ease), background .2s var(--ease);
+}
+.nav-drawer a:hover{
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+.nav-drawer-cta{
+  margin-top: 6px;
+  justify-content: center;
+  color: #fff !important;
+}
