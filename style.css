@@ -1,6 +1,6 @@
 /* =========================================================
    Utkarsh Verma — Site Stylesheet
-   Type system: Outfit (display) / Inter (body) / JetBrains Mono (system voice)
+   Type system: Outfit (display) / Montserrat (body) / JetBrains Mono (system voice)
    ========================================================= */
 
 :root{
@@ -44,7 +44,7 @@ body{
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -98,7 +98,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 13px;
   text-transform: uppercase;
@@ -126,6 +126,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .section-head p{
   color: var(--ink-soft);
   font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.005em;
 }
 
 /* Reveal-on-scroll */
@@ -314,6 +317,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .hero-lede{
   margin-top: 22px;
   font-size: 18px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.005em;
   color: var(--ink-soft);
   max-width: 500px;
 }
@@ -346,7 +352,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-weight: 500;
   color: var(--ink-faint);
   margin-top: 3px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -432,6 +438,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .about-text p{
   color: var(--ink-soft);
   font-size: 16.5px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.005em;
   margin-bottom: 18px;
 }
 .about-text p:last-child{ margin-bottom:0; }
@@ -486,7 +495,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-size: 12px;
   font-weight: 500;
   color: var(--ink-faint);
-  font-family:'Inter', sans-serif;
+  font-family:'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 4px;
@@ -547,7 +556,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-size: 12.5px;
   font-weight: 500;
   color: var(--ink-faint);
-  font-family:'Inter', sans-serif;
+  font-family:'Montserrat', sans-serif;
   margin-bottom: 18px;
   display:block;
 }
@@ -630,7 +639,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   display:inline-flex;
   align-items:center;
   gap: 8px;
-  font-family:'Inter', sans-serif;
+  font-family:'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 12.5px;
   text-transform: uppercase;
@@ -646,6 +655,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .project-content p{
   color: var(--ink-soft);
   font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.005em;
   margin-bottom: 22px;
 }
 .project-stack{
@@ -708,7 +720,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   font-size: 12.5px;
   font-weight: 500;
   color: var(--ink-faint);
-  font-family:'Inter', sans-serif;
+  font-family:'Montserrat', sans-serif;
 }
 .social-card:hover .s-handle{ color: var(--brand); }
 
@@ -764,30 +776,71 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
    Footer
    ========================================================= */
 .footer{
-  padding: 40px 0 48px;
+  padding: 44px 0 40px;
   border-top: 1px solid var(--border);
+  background: var(--bg-soft);
 }
 .footer-inner{
-  display:flex;
+  display:grid;
+  grid-template-columns: auto 1fr auto auto;
   align-items:center;
-  justify-content:space-between;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: 28px;
 }
-.footer-text{
-  font-size: 13.5px;
-  color: var(--ink-faint);
+.footer-brand{
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  transition: color .2s var(--ease);
 }
+.footer-brand:hover{ color: var(--primary); }
+
 .footer-links{
   display:flex;
-  gap: 22px;
+  align-items:center;
+  gap: 6px;
+  justify-self: center;
 }
 .footer-links a{
   font-size: 13.5px;
-  color: var(--ink-faint);
-  transition: color .2s var(--ease);
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 7px 14px;
+  border-radius: 100px;
+  transition: color .2s var(--ease), background .2s var(--ease);
 }
-.footer-links a:hover{ color: var(--primary); }
+.footer-links a:hover{
+  color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.footer-text{
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  color: var(--ink-faint);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.footer-top{
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink-soft);
+  display:flex; align-items:center; justify-content:center;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.footer-top:hover{
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
 
 /* =========================================================
    Responsive
@@ -827,8 +880,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   .cta-band{ padding: 32px 24px; flex-direction:column; align-items:flex-start; }
   .cta-band .btn-ghost{ width: 100%; justify-content:center; }
   .section{ padding: 64px 0; }
-  .footer-inner{ flex-direction: column; align-items:flex-start; gap: 14px; }
-  .footer-links{ gap: 18px; flex-wrap: wrap; }
+  .footer-inner{
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand top"
+      "links links"
+      "text text";
+    row-gap: 18px;
+  }
+  .footer-brand{ grid-area: brand; }
+  .footer-top{ grid-area: top; }
+  .footer-links{ grid-area: links; justify-self: start; flex-wrap: wrap; gap: 4px; margin-left: -14px; }
+  .footer-text{ grid-area: text; text-align: left; white-space: normal; }
 }
 
 @media (max-width: 420px){
