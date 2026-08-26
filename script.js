@@ -18,6 +18,35 @@ document.addEventListener('DOMContentLoaded', () => {
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  /* ---- Scroll progress bar ---- */
+  const progressBar = document.getElementById('scrollProgress');
+  const onProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (progressBar) progressBar.style.width = pct + '%';
+  };
+  onProgress();
+  window.addEventListener('scroll', onProgress, { passive: true });
+  window.addEventListener('resize', onProgress);
+
+  /* ---- Scrollspy: highlight active nav-drawer link by section in view ---- */
+  const spySections = document.querySelectorAll('#home, #about, #skills, #projects, #contact');
+  const navDrawerLinks = document.querySelectorAll('.nav-drawer a[data-section]');
+  if (spySections.length && navDrawerLinks.length) {
+    const spyIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navDrawerLinks.forEach(link => {
+            link.classList.toggle('active', link.dataset.section === id);
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    spySections.forEach(sec => spyIO.observe(sec));
+  }
+
   /* ---- Mobile nav toggle ---- */
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');

@@ -14,11 +14,15 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
+<!-- Devicon: accurate, official language/tool logos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.17.0/devicon.min.css">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="grid-texture" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- ============ NAVBAR ============ -->
 <header class="nav" id="nav">
@@ -33,18 +37,19 @@
   </div>
 
   <nav class="nav-drawer" id="navLinks">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#project">Project</a>
-    <a href="#connect">Connect</a>
-    <a href="#connect" class="btn btn-primary nav-drawer-cta">Get in Touch</a>
+    <a href="#top" data-section="home">Home</a>
+    <a href="#about" data-section="about">About</a>
+    <a href="#skills" data-section="skills">Skills</a>
+    <a href="#projects" data-section="projects">Projects</a>
+    <a href="#contact" data-section="contact">Contact</a>
+    <a href="#contact" class="btn btn-primary nav-drawer-cta">Get in Touch</a>
   </nav>
 </header>
 
 <main id="top">
 
   <!-- ============ HERO ============ -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="wrap hero-inner">
       <div class="hero-text reveal">
         <h1>Building clean code,<br>one <span class="accent">line</span> at a time.</h1>
@@ -56,8 +61,8 @@
         </p>
 
         <div class="hero-actions">
-          <a href="#project" class="btn btn-primary">View Featured Work</a>
-          <a href="#connect" class="btn btn-ghost">Let's Connect</a>
+          <a href="#projects" class="btn btn-primary">View Featured Work</a>
+          <a href="#contact" class="btn btn-ghost">Let's Connect</a>
         </div>
 
         <div class="hero-meta">
@@ -121,7 +126,7 @@
         <div class="stack-strip">
           <span class="stack-pill"><i class="fa-solid fa-code"></i> Problem Solving</span>
           <span class="stack-pill"><i class="fa-solid fa-robot"></i> Applied AI</span>
-          <span class="stack-pill"><i class="fa-brands fa-git-alt"></i> Version Control</span>
+          <span class="stack-pill"><i class="devicon-git-plain"></i> Version Control</span>
           <span class="stack-pill"><i class="fa-solid fa-database"></i> Data-driven Thinking</span>
         </div>
       </div>
@@ -176,10 +181,10 @@
           <h3>Programming Languages</h3>
           <span class="skill-sub">Core logic</span>
           <div class="chip-list">
-            <span class="chip"><i class="fa-solid fa-c"></i> C</span>
-            <span class="chip"><i class="fa-solid fa-code"></i> C++</span>
-            <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
-            <span class="chip"><i class="fa-brands fa-java"></i> Java</span>
+            <span class="chip"><i class="devicon-c-plain"></i> C</span>
+            <span class="chip"><i class="devicon-cplusplus-plain"></i> C++</span>
+            <span class="chip"><i class="devicon-python-plain"></i> Python</span>
+            <span class="chip"><i class="devicon-java-plain"></i> Java</span>
           </div>
         </div>
 
@@ -188,9 +193,9 @@
           <h3>Web Technologies</h3>
           <span class="skill-sub">Front-end foundation</span>
           <div class="chip-list">
-            <span class="chip"><i class="fa-brands fa-html5"></i> HTML</span>
-            <span class="chip"><i class="fa-brands fa-css3-alt"></i> CSS</span>
-            <span class="chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span class="chip"><i class="devicon-html5-plain"></i> HTML</span>
+            <span class="chip"><i class="devicon-css3-plain"></i> CSS</span>
+            <span class="chip"><i class="devicon-javascript-plain"></i> JavaScript</span>
           </div>
         </div>
 
@@ -213,7 +218,7 @@
           <div class="chip-list">
             <span class="chip"><i class="fa-solid fa-brain"></i> AI Tools</span>
             <span class="chip"><i class="fa-solid fa-comment-dots"></i> Prompt Engineering</span>
-            <span class="chip"><i class="fa-brands fa-git-alt"></i> Git</span>
+            <span class="chip"><i class="devicon-git-plain"></i> Git</span>
             <span class="chip"><i class="fa-brands fa-github"></i> GitHub</span>
           </div>
         </div>
@@ -221,71 +226,129 @@
     </div>
   </section>
 
-  <!-- ============ FEATURED PROJECT ============ -->
-  <section class="section" id="project">
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span>Featured Project</span>
-        <h2>Something I actually shipped</h2>
-        <p>The project I keep coming back to improve — an inbox that gets a little smarter with every commit.</p>
+        <span class="eyebrow"><span class="dot"></span>Projects</span>
+        <h2>Things I've actually built</h2>
+        <p>Two projects I keep coming back to improve — one guards an inbox, the other keeps a classroom honest.</p>
       </div>
 
-      <div class="project-card reveal">
-        <div class="project-visual">
-          <div class="mini-terminal">
-            <div class="mt-head">
-              <span>inbox.scan()</span>
-              <span>3 messages</span>
+      <div class="projects-list">
+        <div class="project-card reveal">
+          <div class="project-visual">
+            <div class="mini-terminal">
+              <div class="mt-head">
+                <span>inbox.scan()</span>
+                <span>3 messages</span>
+              </div>
+              <div class="scan-row">
+                <span class="scan-msg">"You've won a free iPhone — claim now"</span>
+                <span class="verdict-chip spam">SPAM</span>
+              </div>
+              <div class="scan-row">
+                <span class="scan-msg">"Reminder: assignment due Friday"</span>
+                <span class="verdict-chip safe">SAFE</span>
+              </div>
+              <div class="scan-row">
+                <span class="scan-msg">"Verify account within 24 hours"</span>
+                <span class="verdict-chip spam">SPAM</span>
+              </div>
             </div>
-            <div class="scan-row">
-              <span class="scan-msg">"You've won a free iPhone — claim now"</span>
-              <span class="verdict-chip spam">SPAM</span>
+          </div>
+
+          <div class="project-content">
+            <span class="project-tag">01 — Featured Build</span>
+            <h3>AI Spam Email Checker</h3>
+            <p>
+              An intelligent application built with <b>Python</b> and AI-driven text
+              analysis that reads message content, recognizes common phishing
+              patterns, and filters out unsolicited spam with strong accuracy —
+              turning a cluttered inbox into a trustworthy one.
+            </p>
+
+            <div class="project-stack">
+              <span class="chip"><i class="devicon-python-plain"></i> Python</span>
+              <span class="chip"><i class="fa-solid fa-brain"></i> NLP / AI Classification</span>
+              <span class="chip"><i class="fa-solid fa-shield-halved"></i> Phishing Detection</span>
             </div>
-            <div class="scan-row">
-              <span class="scan-msg">"Reminder: assignment due Friday"</span>
-              <span class="verdict-chip safe">SAFE</span>
-            </div>
-            <div class="scan-row">
-              <span class="scan-msg">"Verify account within 24 hours"</span>
-              <span class="verdict-chip spam">SPAM</span>
+
+            <div class="project-actions">
+              <a href="https://ai-spam-email-checker.onrender.com/" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="https://github.com/utkarshvermac/AI-Spam-Email-Checker" target="_blank" rel="noopener" class="btn btn-ghost">
+                <i class="fa-brands fa-github"></i> View Code
+              </a>
             </div>
           </div>
         </div>
 
-        <div class="project-content">
-          <span class="project-tag">Featured Build</span>
-          <h3>AI Spam Email Checker</h3>
-          <p>
-            An intelligent application built with <b>Python</b> and AI-driven text
-            analysis that reads message content, recognizes common phishing
-            patterns, and filters out unsolicited spam with strong accuracy —
-            turning a cluttered inbox into a trustworthy one.
-          </p>
+        <div class="project-card reverse reveal">
+          <div class="project-content">
+            <span class="project-tag">02 — Full-Stack Build</span>
+            <h3>CARE CLASS</h3>
+            <p>
+              A full-stack <b>MERN</b> attendance and bunk-tracking app for college
+              students — it calculates live attendance percentage, forecasts how
+              many classes can safely be skipped, and keeps everything secured
+              behind JWT-based authentication.
+            </p>
 
-          <div class="project-stack">
-            <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
-            <span class="chip"><i class="fa-solid fa-brain"></i> NLP / AI Classification</span>
-            <span class="chip"><i class="fa-solid fa-shield-halved"></i> Phishing Detection</span>
+            <div class="project-stack">
+              <span class="chip"><i class="devicon-react-original"></i> React (Vite)</span>
+              <span class="chip"><i class="devicon-nodejs-plain"></i> Node.js</span>
+              <span class="chip"><i class="devicon-express-original"></i> Express.js</span>
+              <span class="chip"><i class="devicon-mongodb-plain"></i> MongoDB</span>
+              <span class="chip"><i class="devicon-tailwindcss-plain"></i> Tailwind CSS</span>
+              <span class="chip"><i class="fa-solid fa-key"></i> JWT Auth</span>
+            </div>
+
+            <div class="project-actions">
+              <a href="https://care-class.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="https://github.com/utkarshvermac" target="_blank" rel="noopener" class="btn btn-ghost">
+                <i class="fa-brands fa-github"></i> View Code
+              </a>
+            </div>
           </div>
 
-          <div class="project-actions">
-            <a href="https://ai-spam-email-checker.onrender.com/" target="_blank" rel="noopener" class="btn btn-primary">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-            </a>
-            <a href="https://github.com/utkarshvermac/AI-Spam-Email-Checker" target="_blank" rel="noopener" class="btn btn-ghost">
-              <i class="fa-brands fa-github"></i> View Code
-            </a>
+          <div class="project-visual">
+            <div class="mini-terminal">
+              <div class="mt-head">
+                <span>attendance.track()</span>
+                <span>4 subjects</span>
+              </div>
+              <div class="scan-row">
+                <span class="scan-msg">Data Structures — 82%</span>
+                <span class="verdict-chip safe">SAFE</span>
+              </div>
+              <div class="scan-row">
+                <span class="scan-msg">Operating Systems — 68%</span>
+                <span class="verdict-chip warn">AT RISK</span>
+              </div>
+              <div class="scan-row">
+                <span class="scan-msg">DBMS — 91%</span>
+                <span class="verdict-chip safe">SAFE</span>
+              </div>
+              <div class="scan-row">
+                <span class="scan-msg">Computer Networks — 74%</span>
+                <span class="verdict-chip warn">AT RISK</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONNECT ============ -->
-  <section class="section" id="connect" style="background:var(--bg-soft);">
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact" style="background:var(--bg-soft);">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow"><span class="dot"></span>Connect</span>
+        <span class="eyebrow"><span class="dot"></span>Contact</span>
         <h2>Let's build something worth talking about</h2>
         <p>Reach out for internships, collaborations, or just to talk code — I reply fastest on LinkedIn.</p>
       </div>
@@ -335,7 +398,7 @@
     <div class="footer-links">
       <a href="https://github.com/utkarshvermac" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/utkarshvermac" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#connect">Connect</a>
+      <a href="#contact">Contact</a>
     </div>
 
     <span class="footer-text">© <span id="year"></span> Utkarsh Verma. Built from scratch, line by line.</span>

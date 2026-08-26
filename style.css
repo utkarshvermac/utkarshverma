@@ -159,6 +159,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 
 /* =========================================================
+   Scroll progress bar
+   ========================================================= */
+.scroll-progress{
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--cyan));
+  z-index: 200;
+  transition: width .1s linear;
+}
+
+/* =========================================================
    Navbar
    ========================================================= */
 .nav{
@@ -426,6 +439,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 }
 .verdict-chip.safe{ background: rgba(30,158,108,0.16); color:#4FDB9C; }
 .verdict-chip.spam{ background: rgba(225,75,75,0.18); color:#FF8A8A; }
+.verdict-chip.warn{ background: rgba(245,166,35,0.18); color:#FFC670; }
 
 /* =========================================================
    About
@@ -581,8 +595,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .chip i{ font-size: 12px; color: var(--primary); }
 
 /* =========================================================
-   Featured Project
+   Projects
    ========================================================= */
+.projects-list{
+  display:flex;
+  flex-direction: column;
+  gap: 28px;
+}
 .project-card{
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -592,6 +611,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-md);
+}
+.project-card.reverse .project-content{
+  order: 1;
+}
+.project-card.reverse .project-visual{
+  order: 2;
 }
 .project-visual{
   background: linear-gradient(155deg, #0F1522 0%, #17203A 100%);
@@ -851,6 +876,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
   .about-grid{ grid-template-columns: 1fr; gap: 40px; }
   .skills-grid{ grid-template-columns: repeat(2, 1fr); }
   .project-card{ grid-template-columns: 1fr; }
+  .project-card .project-content{ order: 1; }
+  .project-card .project-visual{ order: 2; }
   .social-grid{ grid-template-columns: repeat(2, 1fr); }
   .section{ padding: 88px 0; }
 }
@@ -932,6 +959,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
 .nav-drawer a:hover{
   color: var(--primary);
   background: var(--primary-soft);
+}
+.nav-drawer a.active{
+  color: var(--primary);
+  background: var(--primary-soft);
+  font-weight: 600;
 }
 .nav-drawer-cta{
   margin-top: 6px;
